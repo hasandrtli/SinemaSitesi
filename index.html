@@ -14,7 +14,11 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="javascript/genel.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <script src="javascript/index.js" defer></script>
 </head>
 
 <body>
@@ -23,9 +27,7 @@
             <img src="images/logo.png" alt="logo" />
         </a>
         <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Menu</a>
+            <a href="index.html">Anasayfa</a>
         </nav>
 
         <div class="buttons">
@@ -58,32 +60,64 @@
     <div id="weather-info" style="background-color: #e0f7fa; padding: 10px; text-align: center;">
         Hava durumu yükleniyor...
     </div>
+    
+    <hr>
+    <div class="mycontainer">
+        <div class="kartlik">
+            <img src="images/joker.jpg" alt="">
+            <div class="metin ancizar-serif-regular">
+                <p class="metin ancizar-serif-regular">
+                    Joker filmi, DC evreninde geçen karanlık bir karakter hikayesidir. Toplum dışına itilmiş bir adamın
+                    dönüşümünü anlatır.
+                </p>
+                <button type="button" class="btn btn-light" >
+                    <a href="seanslar.html" class="btntext">Bilet al</a>
+                </button>
+            </div>
+        </div>
 
-<script>
-    async function getWeather() {
-        apiKey = '6aea714293ec9e4195a630e28b26bf99';
-        city = 'Istanbul';
-        url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=tr&appid=${apiKey}`;
+        <div class="kartlik">
+            <img src="images/dune.jpg" alt="">
+            <div class="metin ancizar-serif-regular">
+                <p class="metin ancizar-serif-regular">
+                    Dune, uzak bir gelecekte geçen bir bilim kurgu epopedisidir. Çöl gezegeni Arrakis'te geçen siyasi
+                    mücadeleyi konu alır.
+                </p>
+                <button type="button" class="btn btn-light" >
+                    <a href="seanslar.html" class="btntext">Bilet al</a>
+                </button>
+            </div>
+        </div>
 
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
+        <div class="kartlik">
+            <img src="images/inception.jpg" alt="">
+            <div class="metin ancizar-serif-regular">
+                <p class="metin ancizar-serif-regular">
+                    Inception, rüya içinde rüya kurgusuyla akılları zorlayan bir hikaye sunar. Bilinçaltına fikir
+                    yerleştirme teması etrafında döner.
+                </p>
+                <button type="button" class="btn btn-light" >
+                    <a href="seanslar.html" class="btntext">Bilet al</a>
+                </button>
+            </div>
+        </div>
 
-        const temp = data.main.temp;
-        const description = data.weather[0].description;
-        const cityName = data.name;
+        <div class="kartlik">
+            <img src="images/interstellar.jpg" alt="">
+            <div class="metin ancizar-serif-regular">
+                <p class="metin ancizar-serif-regular">
+                    Interstellar, insanlığın hayatta kalma umuduyla çıktığı uzay yolculuğunu anlatır. Zaman ve yer çekimi
+                    temalı güçlü bir dramdır.
+                </p>
+                <button type="button" class="btn btn-light" >
+                    <a href="seanslar.html" class="btntext">Bilet al</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <hr>
 
-        document.getElementById('weather-info').innerText =
-          `${cityName}: ${temp}°C, ${description}`;
-      } catch (error) {
-        console.error('Hava durumu alınamadı:', error);
-        document.getElementById('weather-info').innerText =
-          'Hava durumu bilgisi alınamadı.';
-      } 
-    }
-
-    window.onload = getWeather;
-  </script>
 </body>
 
 </html>
